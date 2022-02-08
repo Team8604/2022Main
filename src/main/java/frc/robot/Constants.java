@@ -22,7 +22,7 @@ public final class Constants {
     public static final int kBallMotor = 5;
 
     //Other
-    public static final double kDriveModifier = 0.45;
+    public static final double kDriveModifier = 0.40;
     public static final double kBallTunnelMotorSpeed = 0.25;
 
     // Button IDs
@@ -37,6 +37,10 @@ public final class Constants {
     public static final int kLeftStickY = 1;
     public static final int kRightStickX = 4;
     public static final int kRightStickY = 5;
+    public static final int kLeftTriggerY = 2;
+    public static final int kRightTriggerY = 3;
+
+
 
     public static final int kButton1 = 1;
     public static final int kButton2 = 2;

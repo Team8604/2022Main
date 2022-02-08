@@ -23,9 +23,14 @@ public class DriveArcade extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    double moveSpeed = RobotContainer.driverController.getRawAxis(Constants.kLeftStickY) * Constants.kDriveModifier;
-    double rotateSpeed = RobotContainer.driverController.getRawAxis(Constants.kLeftStickX);
-    RobotContainer.drivetrain.arcadeDrive(moveSpeed, rotateSpeed);
+    double moveSpeed = RobotContainer.driverController.getRawAxis(Constants.kLeftTriggerY) - RobotContainer.driverController.getRawAxis(Constants.kRightTriggerY);
+    double rotateSpeed = RobotContainer.driverController.getRawAxis(Constants.kLeftStickX);//FIXME: These are strange, figure out why they don't work
+    rotateSpeed = rotateSpeed * -1;
+    
+    moveSpeed *= Constants.kDriveModifier;
+    rotateSpeed *= Constants.kDriveModifier;
+
+    RobotContainer.drivetrain.arcadeDrive(rotateSpeed, moveSpeed);
   }
 
   // Called once the command ends or is interrupted.
