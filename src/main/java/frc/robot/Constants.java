@@ -21,9 +21,32 @@ public final class Constants {
     public static final int[] kLeftFollowers = { 3 };
     public static final int kBallMotor = 5;
 
+    public static final int kShooterMotorLeader = 6;
+    public static final int kShooterMotorFollower = 7;
+
+    //PID
+    public static final int kPIDLoopIdx = 0;
+    public static final int kTimeoutMs = 0;
+    public static final int kTimeoutsMs = 0;
+    public static final double kGains_Velocity_kP = .39;
+    public static final double kGains_Velocity_kI = 0;
+    public static final double kGains_Velocity_kD = 1;
+    public static final double kGains_Velocity_kF = .057;
+
     //Other
     public static final double kDriveModifier = 0.45;
     public static final double kBallTunnelMotorSpeed = 0.25;
+
+    // Current limits
+    public static final double kHDriveCurrentLimit = 35;
+    public static final double kHDriveCurrentLimitTime = 0.4;
+    public static final double kDriveCurrentLimitPeak = 45;
+    public static final double kDriveCurrentLimitContinuous = 40;
+    public static final double kDriveCurrentLimitTime = 0.4;
+    public static final double kDrivePowerRatioDuringAuto = 0.3;    
+
+    //Conversions
+    public static final double kRPM2Ticks = 2048 / (10 * 60);//TODO: This was copied from last year, probably isn't accurate
 
     // Button IDs
     public static final int kButtonA = 1;
