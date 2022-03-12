@@ -4,6 +4,8 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.PneumaticsModuleType;
+
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
  * constants. This class should not be used for any other purpose. All constants should be declared
@@ -19,10 +21,10 @@ public final class Constants {
     public static final int[] kRightFollowers = { 1 };
     public static final int kLeftLeader = 2;
     public static final int[] kLeftFollowers = { 3 };
-    public static final int kBallMotor = 5;
-
     public static final int kShooterMotorLeader = 6;
     public static final int kShooterMotorFollower = 7;
+    public static final int kBallMotor = 5;
+    public static final int kIntakeMotor = 8;
 
     //PID
     public static final int kPIDLoopIdx = 0;
@@ -32,10 +34,22 @@ public final class Constants {
     public static final double kGains_Velocity_kI = 0;
     public static final double kGains_Velocity_kD = 1;
     public static final double kGains_Velocity_kF = .057;
+    public static final double kLimeLightTurn_kP = 0.029; //1/27, so max turn at limelight edge of view is 0.037037....
 
-    //Other
+    //Sensors
+    public static final int kBallSensorLowerLeft = 0;
+    public static final int kBallSensorLowerRight = 1;
+    public static final int kSensorDebounce = 3;
+
+    //Pneumatics
+    public static final PneumaticsModuleType kPCM = PneumaticsModuleType.CTREPCM;//TODO: Find correct PCM tpye
+    public static final int kIntakeSolenoidExtend = 0;
+    public static final int kIntakeSolenoidRetract = 1;
+
+    //Speeds but not feeds
     public static final double kDriveModifier = 0.40;
     public static final double kBallTunnelMotorSpeed = 0.25;
+    public static final double kIntakeMotorSpeed = 0.25;
 
     // Current limits
     public static final double kHDriveCurrentLimit = 35;
@@ -44,6 +58,11 @@ public final class Constants {
     public static final double kDriveCurrentLimitContinuous = 40;
     public static final double kDriveCurrentLimitTime = 0.4;
     public static final double kDrivePowerRatioDuringAuto = 0.3;    
+
+    //Auto constants (NOT PID)
+    public static final int kRequiredLimeLightGoodFrames = 15;
+    public static final double kMaxLimeLightDelta = 1;
+    public static final double kMinRotateSpeed = 0.29;
 
     //Conversions
     public static final double kRPM2Ticks = 2048 / (10 * 60);//TODO: This was copied from last year, probably isn't accurate
